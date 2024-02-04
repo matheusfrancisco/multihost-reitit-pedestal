@@ -1,0 +1,23 @@
+{:paths   ["src"]
+ :deps    {cheshire/cheshire             {:mvn/version "5.11.0"}
+           io.pedestal/pedestal.jetty    {:mvn/version "0.6.3"}
+           io.pedestal/pedestal.route    {:mvn/version "0.6.3"}
+           io.pedestal/pedestal.service  {:mvn/version "0.6.3"}
+           #_#_io.pedestal/pedestal.route    {:mvn/version "0.5.10"}
+
+           org.babashka/cli              {:mvn/version "0.7.53"}
+           org.clojure/clojure           {:mvn/version "1.11.1"}
+           org.clojure/core.async        {:mvn/version "1.5.648"}
+           clj-http/clj-http             {:mvn/version "3.12.3"}
+
+           metosin/reitit-pedestal       {:mvn/version "0.5.18"}
+           metosin/reitit                {:mvn/version "0.5.18"}
+           metosin/reitit-swagger        {:mvn/version "0.5.18"}
+           metosin/reitit-swagger-ui     {:mvn/version "0.5.18"}}
+ :aliases {:dev      {:extra-paths ["dev"]
+                      :extra-deps  {io.github.clojure/tools.build {:git/tag    "v0.9.6"
+                                                                   :git/sha    "8e78bcc"
+                                                                   :exclusions [org.slf4j/slf4j-nop]}}}
+           ;; clj -M:nrepl
+           :nrepl {:extra-deps {cider/cider-nrepl {:mvn/version "0.30.0"}}
+                   :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}}}
